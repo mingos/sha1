@@ -26,14 +26,14 @@
 #include <string>
 
 
-class SHA1
-{
+class SHA1 {
 public:
     SHA1();
     void update(const std::string &s);
     void update(std::istream &is);
     std::string final();
     static std::string from_file(const std::string &filename);
+    static std::string hexdigest(const std::string &text);
 
 private:
     uint32_t digest[5];

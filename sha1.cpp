@@ -305,3 +305,10 @@ std::string SHA1::from_file(const std::string &filename)
     checksum.update(stream);
     return checksum.final();
 }
+
+std::string SHA1::hexdigest(const std::string &text)
+{
+    SHA1 checksum;
+    checksum.update(text);
+    return checksum.final();
+}
